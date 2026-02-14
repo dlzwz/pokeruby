@@ -450,6 +450,13 @@ void sub_802C098(void)
             PlayerBufferExecCompleted();
             DestroyMenuCursor();
         }
+        else if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+        {
+            PlaySE(SE_SELECT);
+            nullsub_8(gActionSelectionCursor[gActiveBattler]);
+            gActionSelectionCursor[gActiveBattler] = 3;
+            sub_802E3E4(gActionSelectionCursor[gActiveBattler], 0);
+        }
     }
     else if (JOY_NEW(START_BUTTON))
     {

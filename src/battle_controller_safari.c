@@ -259,6 +259,13 @@ void bx_battle_menu_t6_2(void)
             sub_802E3E4(gActionSelectionCursor[gActiveBattler], 0);
         }
     }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        nullsub_8(gActionSelectionCursor[gActiveBattler]);
+        gActionSelectionCursor[gActiveBattler] = 3;
+        sub_802E3E4(gActionSelectionCursor[gActiveBattler], 0);
+    }
     else if (JOY_NEW(DPAD_DOWN))
     {
         if (!(gActionSelectionCursor[gActiveBattler] & 2))
