@@ -785,7 +785,10 @@ void ItemUseOutOfBattle_Repel(u8 taskId)
     if (VarGet(VAR_REPEL_STEP_COUNT) == 0)
     {
         VarSet(VAR_REPEL_STEP_COUNT, ItemId_GetHoldEffectParam(gSpecialVar_ItemId));
-        PrepareItemUseMessage();
+        // Repels are now unlimited use (not consumed)
+        sub_80A3E0C();
+        CopyItemName(gSpecialVar_ItemId, gStringVar2);
+        StringExpandPlaceholders(gStringVar4, gOtherText_UsedItem);
         DisplayItemMessageOnField(taskId, gStringVar4, CleanUpItemMenuMessage, 1);
     }
     else
