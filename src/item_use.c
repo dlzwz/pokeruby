@@ -880,7 +880,7 @@ void ItemUseInBattle_PokeBall(u8 taskId)
 {
     if (PlayerPartyAndPokemonStorageFull() == FALSE) // have room for mon?
     {
-        RemoveBagItem(gSpecialVar_ItemId, 1);
+        // Poke Balls are now unlimited use (not consumed)
         sub_80A7094(taskId);
     }
     else
