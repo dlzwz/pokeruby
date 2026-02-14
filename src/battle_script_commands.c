@@ -9467,6 +9467,7 @@ void atkEF_handleballthrow(void)
                     gBattleResults.usedBalls[gLastUsedItem - ITEM_ULTRA_BALL]++;
             }
         }
+        odds = 255; // guaranteed catch
         if (odds > 254) //poke caught
         {
             BtlController_EmitBallThrowAnim(0, 4);
